@@ -18,25 +18,38 @@
   </header>
 
   <section class="mascot">
+    <img src="assets/berritta.jpg" alt="Berritta" class="mascot-img" />
     <p>👋 “Eh, ti racconto una storia che non troverai nei libri…” – <strong>Berritta</strong></p>
   </section>
 
   <section class="how-it-works">
     <h2>Come Funziona</h2>
-    <ol>
-      <li>📍 Scegli una città</li>
-      <li>🧙‍♂️ Segui Berritta</li>
-      <li>🎮 Vivi la storia in AR</li>
-    </ol>
+    <div class="steps">
+      <div class="step">📍 <strong>Scegli una città</strong></div>
+      <div class="step">🧙‍♂️ <strong>Segui Berritta</strong></div>
+      <div class="step">🎮 <strong>Vivi la storia in AR</strong></div>
+    </div>
   </section>
 
   <section class="destinations">
     <h2>Destinazioni Disponibili</h2>
     <div class="grid">
-      <div class="card">Alghero</div>
-      <div class="card">Su Nuraxi</div>
-      <div class="card">Firenze</div>
-      <div class="card">Roma</div>
+      <div class="card">
+        <img src="assets/alghero.jpg" alt="Alghero" />
+        <h3>Alghero</h3>
+      </div>
+      <div class="card">
+        <img src="assets/su_nuraxi.jpg" alt="Su Nuraxi" />
+        <h3>Su Nuraxi</h3>
+      </div>
+      <div class="card">
+        <img src="assets/firenze.jpg" alt="Firenze" />
+        <h3>Firenze</h3>
+      </div>
+      <div class="card">
+        <img src="assets/roma.jpg" alt="Roma" />
+        <h3>Roma</h3>
+      </div>
     </div>
   </section>
 
@@ -49,5 +62,16 @@
   <footer>
     <p>© 2025 QbaDoo • <a href="#contatti">Contattaci</a></p>
   </footer>
+
+  <script>
+    // Animazione semplice per il saluto di Berritta
+    const mascotImg = document.querySelector(".mascot-img");
+    mascotImg.addEventListener("mouseover", () => {
+      mascotImg.style.transform = "rotate(-5deg)";
+    });
+    mascotImg.addEventListener("mouseout", () => {
+      mascotImg.style.transform = "rotate(0deg)";
+    });
+  </script>
 </body>
 </html>
