@@ -4,70 +4,388 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QbaDoo - Avventure in Realtà Aumentata</title>
+  <meta name="description" content="QbaDoo trasforma i siti culturali in avventure in realtà aumentata — storie locali, misteri nascosti, giochi e risate.">
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <h1>Scopri la tua prossima avventura in AR con <span class="highlight">QbaDoo</span>!</h1>
-    <p class="subtitle">QbaDoo trasforma i siti culturali in avventure in realtà aumentata — storie locali, misteri nascosti, giochi e risate.</p>
-    <div class="cta-buttons">
-      <a href="#download" class="btn primary">Scarica l’App</a>
-      <a href="#demo" class="btn secondary">Guarda una Demo</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/berritta_small.png" alt="QbaDoo Logo" class="nav-logo-img">
+        <span class="nav-logo-text">QbaDoo</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#come-funziona" class="nav-link">Come Funziona</a></li>
+        <li><a href="#destinazioni" class="nav-link">Destinazioni</a></li>
+        <li><a href="#famiglie" class="nav-link">Per Famiglie</a></li>
+        <li><a href="#enti-culturali" class="nav-link">Per Enti</a></li>
+        <li><a href="#download" class="nav-link">Scarica App</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Scopri la tua prossima avventura in AR con <span class="highlight">QbaDoo</span>!</h1>
+      <p class="subtitle">QbaDoo trasforma i siti culturali in avventure in realtà aumentata — storie locali, misteri nascosti, giochi e risate.</p>
+      <div class="cta-buttons">
+        <a href="#download" class="btn primary">Scarica l'App</a>
+        <a href="#come-funziona" class="btn secondary">Guarda una Demo</a>
+      </div>
     </div>
   </header>
 
+  <!-- Berritta Introduction -->
   <section class="mascot">
-    <img src="assets/berritta.png" alt="Berritta" class="mascot-img" />
-    <p>👋 “Eh, ti racconto una storia che non troverai nei libri…” – <strong>Berritta</strong></p>
-  </section>
-
-  <section class="how-it-works">
-    <h2>Come Funziona</h2>
-    <div class="steps">
-      <div class="step">📍 <strong>Scegli una città</strong></div>
-      <div class="step">🧙‍♂️ <strong>Segui Berritta</strong></div>
-      <div class="step">🎮 <strong>Vivi la storia in AR</strong></div>
-    </div>
-  </section>
-
-  <section class="destinations">
-    <h2>Destinazioni Disponibili</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="assets/alghero.png" alt="Alghero" />
-        <h3>Alghero</h3>
-      </div>
-      <div class="card">
-        <img src="assets/lucia.png" alt="Nulvi" />
-        <h3>Nulvi</h3>
-      </div>
-      <div class="card">
-        <img src="assets/bosa.PNG" alt="Bosa" />
-        <h3>Bosa</h3>
+    <div class="mascot-container">
+      <img src="assets/berritta.png" alt="Berritta" class="mascot-img" />
+      <div class="mascot-quote">
+        <p class="berritta-text">"Eh, ti racconto una storia che non troverai nei libri…"</p>
+        <p class="mascot-intro">Niente QR code. Niente attrezzature. Solo storie, geolocalizzazione e il tuo smartphone.</p>
       </div>
     </div>
   </section>
 
+  <!-- How It Works -->
+  <section id="come-funziona" class="how-it-works">
+    <div class="container">
+      <h2>Come Funziona</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">📍</div>
+          <h3>Scegli una città</h3>
+          <p>Seleziona una delle nostre destinazioni disponibili dalla mappa</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🧙‍♂️</div>
+          <h3>Segui Berritta</h3>
+          <p>La nostra guida virtuale ti condurrà attraverso storie incredibili</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🎮</div>
+          <h3>Vivi la storia</h3>
+          <p>Immergiti in avventure AR interattive e scopri misteri nascosti</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section id="destinazioni" class="destinations">
+    <div class="container">
+      <h2>Destinazioni Disponibili</h2>
+      <div class="destinations-grid">
+        <div class="destination-card">
+          <img src="assets/alghero.png" alt="Alghero" />
+          <div class="card-content">
+            <h3>Alghero</h3>
+            <p class="destination-description">Scopri le torri antiche e i segreti della Riviera del Corallo</p>
+            <blockquote class="berritta-quote">"Questa torre ha visto pirati, amanti e un asino molto confuso..."</blockquote>
+          </div>
+        </div>
+        <div class="destination-card">
+          <img src="assets/lucia.png" alt="Nulvi" />
+          <div class="card-content">
+            <h3>Nulvi</h3>
+            <p class="destination-description">Immergiti nelle tradizioni autentiche della Sardegna rurale</p>
+            <blockquote class="berritta-quote">"A Nulvi, anche le pietre sanno raccontare storie d'amore..."</blockquote>
+          </div>
+        </div>
+        <div class="destination-card">
+          <img src="assets/bosa.PNG" alt="Bosa" />
+          <div class="card-content">
+            <h3>Bosa</h3>
+            <p class="destination-description">Naviga tra le case colorate e i misteri del fiume Temo</p>
+            <blockquote class="berritta-quote">"Il fiume qui sussurra segreti che nemmeno io conosco..."</blockquote>
+          </div>
+        </div>
+        <div class="destination-card">
+          <img src="assets/nuraghe.png" alt="Nuraghe Su Nuraxi" />
+          <div class="card-content">
+            <h3>Su Nuraxi</h3>
+            <p class="destination-description">Esplora il mistero dei nuraghi e delle civiltà antiche</p>
+            <blockquote class="berritta-quote">"Su Nuraxi? Oh, lì c'era una capra che cambiò il destino di un re..."</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="destinations-cta">
+        <p>Non trovi la tua città? <a href="#contatti" class="cta-link">Segnalacela!</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audiences -->
+  <section id="famiglie" class="target-audiences">
+    <div class="container">
+      <div class="audience-section">
+        <div class="audience-content">
+          <h2>Per Famiglie</h2>
+          <div class="audience-features">
+            <div class="feature">
+              <h3>Edutainment Divertente</h3>
+              <p>Apprendimento attivo senza schermo passivo. I bambini esplorano, scoprono e imparano attraverso il gioco.</p>
+            </div>
+            <div class="feature">
+              <h3>Gioco Condiviso</h3>
+              <p>Genitori e figli vivono insieme avventure indimenticabili, creando ricordi preziosi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="audience-image">
+          <img src="assets/phone.png" alt="Famiglia che usa QbaDoo" />
+        </div>
+      </div>
+      
+      <div class="audience-section reverse">
+        <div class="audience-content">
+          <h2>Per Viaggiatori</h2>
+          <div class="audience-features">
+            <div class="feature">
+              <h3>Storie Assurde e Misteri</h3>
+              <p>Scopri leggende locali e aneddoti che nessuna guida turistica tradizionale ti racconterà mai.</p>
+            </div>
+            <div class="feature">
+              <h3>Esplorazione Nuova</h3>
+              <p>Nessuna guida noiosa, solo giochi interattivi e avventure che ti fanno vedere i luoghi con occhi diversi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="audience-image">
+          <img src="assets/Berritta_prot.png" alt="Viaggiatore con QbaDoo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
   <section class="testimonials">
-    <h2>Cosa dicono di noi</h2>
-    <blockquote>“I miei figli si sono divertiti un mondo! Finalmente un modo educativo ma coinvolgente.” – Famiglia Sanna</blockquote>
-    <blockquote>“Mi sembrava di vivere in una storia! Esperienza unica.” – Giulia, 27 anni</blockquote>
+    <div class="container">
+      <h2>Cosa dicono di noi</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial">
+          <p>"I miei figli si sono divertiti un mondo! Finalmente un modo educativo ma coinvolgente."</p>
+          <cite>– Famiglia Sanna</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Mi sembrava di vivere in una storia! Esperienza unica e coinvolgente."</p>
+          <cite>– Giulia, 27 anni</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"Berritta ci ha fatto scoprire la nostra città come non l'avevamo mai vista prima."</p>
+          <cite>– Marco, turista</cite>
+        </blockquote>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 QbaDoo • <a href="#contatti">Contattaci</a></p>
+  <!-- B2B Section -->
+  <section id="enti-culturali" class="b2b-section">
+    <div class="container">
+      <h2>Per Enti Culturali</h2>
+      <p class="b2b-intro">Trasforma la tua istituzione culturale in una destinazione digitale coinvolgente</p>
+      
+      <div class="b2b-benefits">
+        <div class="benefit">
+          <h3>Zero Infrastruttura</h3>
+          <p>Nessun hardware aggiuntivo. La tecnologia AR funziona su qualsiasi smartphone moderno.</p>
+        </div>
+        <div class="benefit">
+          <h3>Esperienza Moderna</h3>
+          <p>Offri ai visitatori un'esperienza immersiva che combina cultura e tecnologia.</p>
+        </div>
+        <div class="benefit">
+          <h3>Analytics Dettagliati</h3>
+          <p>Monitora l'engagement dei visitatori e ottimizza l'esperienza con dati in tempo reale.</p>
+        </div>
+      </div>
+      
+      <div class="b2b-tiers">
+        <div class="tier">
+          <h4>Standard</h4>
+          <p>Perfetto per musei e siti culturali di piccole dimensioni</p>
+        </div>
+        <div class="tier featured">
+          <h4>Premium</h4>
+          <p>Ideale per istituzioni di medie dimensioni con contenuti personalizzati</p>
+        </div>
+        <div class="tier">
+          <h4>Enterprise</h4>
+          <p>Soluzione completa per grandi organizzazioni culturali</p>
+        </div>
+      </div>
+      
+      <div class="b2b-cta">
+        <a href="#contatti" class="btn primary">Richiedi una Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="download-section">
+    <div class="container">
+      <h2>Scarica l'App</h2>
+      <p class="download-intro">Inizia la tua avventura oggi stesso</p>
+      
+      <div class="app-badges">
+        <a href="#" class="app-badge">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download su App Store" />
+        </a>
+        <a href="#" class="app-badge">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Scarica da Google Play" />
+        </a>
+      </div>
+      
+      <div class="download-features">
+        <div class="download-feature">
+          <h4>Compatibilità Universale</h4>
+          <p>Funziona su tutti gli smartphone moderni</p>
+        </div>
+        <div class="download-feature">
+          <h4>Prova Gratuita</h4>
+          <p>Testa l'esperienza nella tua città</p>
+        </div>
+        <div class="download-feature">
+          <h4>Offline Ready</h4>
+          <p>Scarica i contenuti e gioca anche senza connessione</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contatti" class="contact-section">
+    <div class="container">
+      <h2>Contattaci</h2>
+      <div class="contact-content">
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Oggetto</label>
+              <select id="subject" name="subject" required>
+                <option value="">Seleziona un'opzione</option>
+                <option value="demo">Richiedi Demo (Enti Culturali)</option>
+                <option value="partnership">Partnership</option>
+                <option value="support">Supporto Tecnico</option>
+                <option value="suggestion">Suggerisci una Città</option>
+                <option value="other">Altro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn primary">Invia Messaggio</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>Informazioni di Contatto</h3>
+          <p><strong>Email:</strong> patedde@proton.me</p>
+          <p><strong>Rispondiamo entro:</strong> 24 ore</p>
+          
+          <div class="social-links">
+            <h4>Seguici</h4>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/berritta_small.png" alt="QbaDoo" class="footer-logo">
+          <p>Trasformiamo i siti culturali in avventure indimenticabili</p>
+        </div>
+        <div class="footer-links">
+          <h4>Link Utili</h4>
+          <a href="#home">Home</a>
+          <a href="#come-funziona">Come Funziona</a>
+          <a href="#destinazioni">Destinazioni</a>
+          <a href="#download">Scarica App</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contatti</h4>
+          <p>patedde@proton.me</p>
+          <a href="#contatti">Modulo di Contatto</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 QbaDoo. Tutti i diritti riservati.</p>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Animazione semplice per il saluto di Berritta
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Mobile navigation toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }));
+
+    // Berritta animation
     const mascotImg = document.querySelector(".mascot-img");
-    mascotImg.addEventListener("mouseover", () => {
-      mascotImg.style.transform = "rotate(-5deg)";
-    });
-    mascotImg.addEventListener("mouseout", () => {
-      mascotImg.style.transform = "rotate(0deg)";
-    });
+    if (mascotImg) {
+      mascotImg.addEventListener("mouseover", () => {
+        mascotImg.style.transform = "rotate(-5deg) scale(1.05)";
+      });
+      mascotImg.addEventListener("mouseout", () => {
+        mascotImg.style.transform = "rotate(0deg) scale(1)";
+      });
+    }
+
+    // Form submission
+    const contactForm = document.querySelector('#contatti form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Grazie per il tuo messaggio! Ti risponderemo presto.');
+      });
+    }
   </script>
 </body>
 </html>
