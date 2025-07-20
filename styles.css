@@ -1,0 +1,118 @@
+/* Fonts */
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  background-color: #FFF8F0;
+  color: #8B4513;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Lora', serif;
+  color: #FF6B35;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #D2691E;
+  color: #FFF;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.hero .highlight {
+  color: #FF5E6C;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background-color: #0047AB;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #FF5E6C;
+  color: white;
+}
+
+.mascot {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-style: italic;
+  background-color: #F4A460;
+}
+
+.how-it-works {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #FFF;
+}
+
+.how-it-works ol {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.destinations {
+  padding: 2rem 1rem;
+  background-color: #FFF2E5;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: #FFF;
+  border: 2px solid #8B4513;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  min-width: 150px;
+}
+
+.testimonials {
+  background-color: #FFFBF7;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+footer {
+  background-color: #8B4513;
+  color: #FFF;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #FF5E6C;
+}
