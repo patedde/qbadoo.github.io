@@ -39,7 +39,7 @@
       <p class="subtitle">QbaDoo trasforma i siti culturali in avventure in realtà aumentata — storie locali, misteri nascosti, giochi e risate.</p>
       <div class="cta-buttons">
         <a href="#download" class="btn primary">Scarica l'App</a>
-        <a href="#come-funziona" class="btn secondary">Guarda una Demo</a>
+        <a href="https://www.youtube.com/watch?v=IRqXAqBmpes" target="_blank" rel="noopener noreferrer" class="btn secondary">Guarda una Demo</a>
       </div>
     </div>
   </header>
@@ -244,7 +244,7 @@
       <h2>Contattaci</h2>
       <div class="contact-content">
         <div class="contact-form">
-          <form>
+          <form action="https://formspree.io/f/xdkobkzr" method="POST" id="contact-form">
             <div class="form-group">
               <label for="name">Nome</label>
               <input type="text" id="name" name="name" required>
@@ -268,8 +268,12 @@
               <label for="message">Messaggio</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn primary">Invia Messaggio</button>
+            <input type="hidden" name="_next" value="thank-you.html">
+            <input type="hidden" name="_subject" value="Nuovo messaggio da QbaDoo Website">
+            <input type="hidden" name="_cc" value="arestiainteractive@gmail.com">
+            <button type="submit" class="btn primary" id="submit-btn">Invia Messaggio</button>
           </form>
+          <div id="form-status" class="form-status" style="display: none;"></div>
         </div>
         <div class="contact-info">
           <h3>Informazioni di Contatto</h3>
@@ -356,11 +360,44 @@
     }
 
     // Form submission
-    const contactForm = document.querySelector('#contatti form');
+    const contactForm = document.querySelector('#contact-form');
+    const submitBtn = document.querySelector('#submit-btn');
+    const formStatus = document.querySelector('#form-status');
+    
     if (contactForm) {
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Grazie per il tuo messaggio! Ti risponderemo presto.');
+        
+        // Show loading state
+        submitBtn.textContent = 'Invio in corso...';
+        submitBtn.disabled = true;
+        
+        const formData = new FormData(contactForm);
+        
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            formStatus.innerHTML = '<p style="color: #28a745; font-weight: 600;">✅ Grazie per il tuo messaggio! Ti risponderemo entro 24 ore.</p>';
+            formStatus.style.display = 'block';
+            contactForm.reset();
+          } else {
+            throw new Error('Errore nell\'invio');
+          }
+        })
+        .catch(error => {
+          formStatus.innerHTML = '<p style="color: #dc3545; font-weight: 600;">❌ Errore nell\'invio. Riprova o contattaci direttamente via email.</p>';
+          formStatus.style.display = 'block';
+        })
+        .finally(() => {
+          submitBtn.textContent = 'Invia Messaggio';
+          submitBtn.disabled = false;
+        });
       });
     }
   </script>
