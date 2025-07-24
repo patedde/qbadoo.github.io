@@ -275,6 +275,8 @@ a {
   border: 3px solid var(--white);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   animation: float 4s ease-in-out infinite;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero-logo-text {
@@ -335,6 +337,8 @@ a {
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
   animation: float 4s ease-in-out infinite;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .mascot-img.berritta-wink {
