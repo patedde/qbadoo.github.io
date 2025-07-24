@@ -398,7 +398,7 @@ a {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('../assets/generated/dots_pattern.svg');
+  background: url('assets/generated/dots_pattern.svg');
   opacity: 0.1;
   pointer-events: none;
 }

@@ -1,9 +1,9 @@
 <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
   <path d="M10 30 Q50 10 80 30" 
-        stroke="var(--terracotta)" 
+        stroke="#FF6B35" 
         stroke-width="3" 
         fill="none" 
         stroke-linecap="round"/>
   <polygon points="75,25 85,30 75,35" 
-           fill="var(--terracotta)"/>
+           fill="#FF6B35"/>
 </svg>
