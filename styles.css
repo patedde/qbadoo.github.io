@@ -399,8 +399,10 @@ a {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/generated/dots_pattern.svg');
-  opacity: 0.1;
+  background-size: 50px 50px;
+  opacity: 0.3;
   pointer-events: none;
+  z-index: 1;
 }
 
 .destination-card:nth-child(1) { border-radius: 25px 15px 20px 30px; }
@@ -430,6 +432,8 @@ a {
 
 .card-content {
   padding: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .destination-description {
@@ -983,6 +987,38 @@ a {
 .form-group select:invalid:not(:placeholder-shown),
 .form-group textarea:invalid:not(:placeholder-shown) {
   border-color: var(--terracotta);
+}
+
+/* Speech bubble styling */
+.berritta-speech-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.speech-bubble {
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  top: -20px;
+  left: -50px;
+  animation: bubble-appear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animated-text {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Section decorations */
+.section-decoration {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Touch interactions for mobile */
