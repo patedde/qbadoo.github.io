@@ -399,8 +399,9 @@ a {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/generated/dots_pattern.svg');
-  background-size: 50px 50px;
-  opacity: 0.3;
+  background-size: 40px 40px;
+  background-repeat: repeat;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 1;
 }
@@ -998,18 +999,21 @@ a {
 
 .speech-bubble {
   position: absolute;
-  width: 300px;
+  width: 250px;
+  height: auto;
   z-index: 1;
-  top: -20px;
-  left: -50px;
+  top: -15px;
+  left: -30px;
   animation: bubble-appear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0.8;
 }
 
 .animated-text {
   position: relative;
   z-index: 2;
   margin: 0;
-  padding: 20px;
+  padding: 15px 25px;
+  background: transparent;
 }
 
 /* Section decorations */
@@ -1019,6 +1023,39 @@ a {
   vertical-align: middle;
   opacity: 0.8;
   animation: float 3s ease-in-out infinite;
+}
+
+/* Floating decorative elements */
+.floating-decoration {
+  position: absolute;
+  opacity: 0.4;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-1 {
+  top: 20%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+}
+
+.floating-2 {
+  top: 60%;
+  right: 15%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+}
+
+.floating-3 {
+  top: 40%;
+  right: 25%;
+  width: 80px;
+  height: 48px;
+  animation-delay: 4s;
+  transform: rotate(15deg);
 }
 
 /* Touch interactions for mobile */
