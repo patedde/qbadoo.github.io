@@ -12,6 +12,48 @@
   --card-bg: #FFFBF7;
 }
 
+/* CSS Animations Framework */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.6); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bubble-appear {
+  0% { opacity: 0; transform: scale(0.3) translateY(-10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes text-type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes berritta-wink {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.1); }
+}
+
+@keyframes animate-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -86,6 +128,7 @@ a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .nav-logo-text {
@@ -113,6 +156,9 @@ a {
 .nav-link:hover {
   background-color: var(--warm-sand);
   color: var(--white);
+  transform: translateY(-2px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(244, 164, 96, 0.4);
 }
 
 .hamburger {
@@ -149,12 +195,15 @@ a {
   background-color: var(--terracotta);
   color: var(--white);
   box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 .btn.primary:hover {
   background-color: var(--sardinian-clay);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  border-radius: 25px;
+  letter-spacing: 1px;
 }
 
 .btn.secondary {
@@ -166,12 +215,21 @@ a {
 .btn.secondary:hover {
   background-color: var(--cobalt-blue);
   color: var(--white);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  border-radius: 25px;
+  letter-spacing: 1px;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--sardinian-clay) 0%, var(--terracotta) 100%);
+  background: linear-gradient(135deg, 
+    var(--sardinian-clay) 0%, 
+    var(--terracotta) 25%,
+    var(--coral) 50%,
+    var(--terracotta) 75%,
+    var(--sardinian-clay) 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
   color: var(--white);
   padding: 8rem 1.5rem 4rem;
   text-align: center;
@@ -203,7 +261,7 @@ a {
 }
 
 .hero .highlight {
-  color: var(--cobalt);
+  color: var(--coral);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -245,6 +303,11 @@ a {
   border: 4px solid var(--terracotta);
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+
+.mascot-img.berritta-wink {
+  animation: berritta-wink 0.5s ease-in-out;
 }
 
 .mascot-quote {
@@ -331,10 +394,25 @@ a {
   position: relative;
 }
 
+.destination-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../assets/generated/dots_pattern.svg');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.destination-card:nth-child(1) { border-radius: 25px 15px 20px 30px; }
+.destination-card:nth-child(2) { border-radius: 30px 20px 25px 15px; }
+.destination-card:nth-child(3) { border-radius: 20px 30px 15px 25px; }
+
 .destination-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+  transform: translateY(-8px) rotateX(5deg) rotateY(2deg);
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
   border-color: var(--terracotta);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gentle-bounce 2s ease-in-out infinite;
 }
 
 .destination-card img {
@@ -862,6 +940,55 @@ a {
   .download-features {
     grid-template-columns: 1fr;
   }
+
+  /* Scale down animations on mobile */
+  .mascot-img {
+    animation-duration: 6s; /* Less frequent on mobile */
+  }
+  
+  .btn.primary {
+    animation-duration: 6s; /* Slower pulse on mobile */
+  }
+
+  .nav-logo-img {
+    animation-duration: 4s; /* Slower on mobile */
+  }
+}
+
+/* Animation classes for scroll triggers */
+.step, .destination-card, .testimonial {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.step.animate-in, .destination-card.animate-in, .testimonial.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced form styles */
+.form-group.focused label {
+  color: var(--coral);
+  transform: translateY(-5px);
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+  border-color: var(--coral);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--terracotta);
+}
+
+/* Touch interactions for mobile */
+.destination-card.touch-active {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
 }
 
 /* Accessibility */

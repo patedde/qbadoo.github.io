@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 10 Q10 10 10 20 L10 80 Q10 90 20 90 L150 90 L170 110 L160 90 L170 90 Q180 90 180 80 L180 20 Q180 10 170 10 Z" 
+        fill="var(--warm-sand)" 
+        stroke="var(--ancient-stone)" 
+        stroke-width="2"/>
+</svg>
