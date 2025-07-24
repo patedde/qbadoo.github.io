@@ -255,14 +255,45 @@ a {
   margin: 0 auto;
 }
 
-.hero h1 {
-  color: var(--white);
-  margin-bottom: 1.5rem;
+/* Hero Logo Styling */
+.hero-logo {
+  margin-bottom: 2rem;
 }
 
-.hero .highlight {
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-logo-text {
+  font-family: 'Lora', serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.hero-tagline {
+  font-size: 1.3rem;
   color: var(--coral);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  font-style: italic;
 }
 
 .subtitle {
@@ -399,8 +430,9 @@ a {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/generated/dots_pattern.svg');
-  background-size: 50px 50px;
-  opacity: 0.3;
+  background-size: 40px 40px;
+  background-repeat: repeat;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 1;
 }
@@ -884,8 +916,22 @@ a {
     padding: 6rem 1.5rem 3rem;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .hero-logo-text {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .logo-placeholder {
+    gap: 0.5rem;
   }
 
   .cta-buttons {
@@ -922,8 +968,18 @@ a {
     padding: 0 1rem;
   }
 
-  .hero h1 {
-    font-size: 1.8rem;
+  .hero-logo-text {
+    font-size: 2rem;
+    letter-spacing: 0px;
+  }
+
+  .hero-logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
   }
 
   .subtitle {
@@ -988,40 +1044,7 @@ a {
 .form-group textarea:invalid:not(:placeholder-shown) {
   border-color: var(--terracotta);
 }
-/* Animation keyframes */
-@keyframes bubble-appear {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.15;
-  }
-}
 
-@keyframes text-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animated-text {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  padding: 15px 25px;
-  background: transparent;
-}
 
 /* Section decorations */
 .section-decoration {
