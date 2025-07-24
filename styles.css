@@ -399,9 +399,8 @@ a {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/generated/dots_pattern.svg');
-  background-size: 40px 40px;
-  background-repeat: repeat;
-  opacity: 0.5;
+  background-size: 50px 50px;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 1;
 }
