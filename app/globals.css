@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-headline: "Lora", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-body: "Manrope", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  @apply text-qbadoo-brown antialiased;
+  background-color: #fff4e0;
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(244, 164, 96, 0.34), transparent 28%),
+    radial-gradient(circle at 86% 24%, rgba(210, 105, 30, 0.15), transparent 30%),
+    radial-gradient(circle at 72% 88%, rgba(255, 107, 53, 0.12), transparent 24%),
+    radial-gradient(circle at 70% 28%, rgba(0, 71, 171, 0.07), transparent 25%),
+    repeating-linear-gradient(
+      105deg,
+      rgba(139, 69, 19, 0.035) 0 1px,
+      transparent 1px 24px
+    ),
+    radial-gradient(circle, rgba(59, 31, 15, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, auto, auto, 180px 180px, 24px 24px;
+  background-position: center, center, center, center, center, center;
+}
+
+.page-shell {
+  @apply relative isolate min-h-screen overflow-hidden;
+}
+
+.page-shell::before {
+  content: "";
+  @apply pointer-events-none absolute inset-0;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(0, 71, 171, 0.09), transparent 24%),
+    radial-gradient(circle at 88% 78%, rgba(0, 71, 171, 0.08), transparent 24%),
+    radial-gradient(circle at 22% 42%, rgba(255, 107, 53, 0.08), transparent 30%);
+  z-index: -2;
+}
+
+.page-shell::after {
+  content: "";
+  @apply pointer-events-none absolute inset-0;
+  background-image: repeating-radial-gradient(
+    circle at center,
+    rgba(139, 69, 19, 0.03) 0 1px,
+    transparent 1px 22px
+  );
+  opacity: 0.55;
+  z-index: -1;
+}
+
+.section-wrap {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.section-title {
+  font-family: var(--font-headline);
+  @apply text-[2rem] font-semibold leading-tight text-qbadoo-brown md:text-[2.45rem];
+}
+
+.section-lead {
+  @apply mt-4 max-w-3xl text-lg leading-relaxed text-[#4f3120];
+}
+
+.rounded-card {
+  @apply rounded-2xl border border-[#b17b45]/30 bg-white/90 p-6 shadow-card backdrop-blur transition duration-300;
+  background-image:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.08)),
+    repeating-linear-gradient(128deg, rgba(139, 69, 19, 0.018) 0 2px, transparent 2px 20px);
+}
+
+.eyebrow-label {
+  @apply inline-flex items-center gap-2 rounded-full border border-qbadoo-clay/30 bg-qbadoo-sand/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-qbadoo-stone;
+}
+
+.cta-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-qbadoo-cobalt px-5 py-3 text-sm font-semibold text-white shadow-soft transition duration-200 hover:bg-[#00398a] hover:shadow-[0_14px_30px_rgba(0,71,171,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8bb2ff] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+}
+
+.cta-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-qbadoo-cobalt/35 bg-white/75 px-5 py-3 text-sm font-semibold text-qbadoo-cobalt transition duration-200 hover:bg-qbadoo-cobalt/5 hover:shadow-[0_10px_24px_rgba(0,71,171,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qbadoo-cobalt/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+}
+
+.ar-glow-circle {
+  @apply pointer-events-none absolute rounded-full;
+  background: radial-gradient(circle, rgba(0, 71, 171, 0.25), rgba(0, 71, 171, 0.08) 45%, transparent 74%);
+  box-shadow:
+    0 0 0 1px rgba(0, 71, 171, 0.16),
+    0 0 48px rgba(0, 71, 171, 0.18);
+}
+
+.ar-ring {
+  @apply pointer-events-none absolute rounded-full border border-qbadoo-cobalt/40;
+  box-shadow:
+    0 0 0 1px rgba(0, 71, 171, 0.08),
+    0 0 28px rgba(0, 71, 171, 0.2);
+  animation: ringPulse 2.6s ease-out infinite;
+}
+
+.ar-icon-wrap {
+  @apply relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-qbadoo-cobalt/20 bg-[#f2f8ff];
+}
+
+.ar-icon-wrap::before {
+  content: "";
+  @apply absolute inset-[-5px] rounded-full border border-qbadoo-cobalt/25;
+  animation: ringPulse 2.2s ease-out infinite;
+}
+
+.parchment-panel {
+  @apply rounded-2xl border border-[#d49961]/45 bg-qbadoo-parchment/80 shadow-soft transition duration-300;
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.08)),
+    repeating-linear-gradient(135deg, rgba(139, 69, 19, 0.025) 0 2px, transparent 2px 18px),
+    radial-gradient(circle at 80% 18%, rgba(255, 107, 53, 0.06), transparent 28%);
+}
+
+.section-band {
+  @apply border-b border-[#d8b58d]/45 bg-[#fff8ea]/70;
+  scroll-margin-top: 6rem;
+}
+
+.section-band-alt {
+  @apply border-b border-[#d8b58d]/45 bg-[#fef0da]/65;
+  scroll-margin-top: 6rem;
+}
+
+.section-path {
+  @apply relative;
+}
+
+.section-path::after {
+  content: "";
+  @apply pointer-events-none absolute right-3 top-2 hidden h-20 w-20 md:block;
+  border-right: 2px dashed rgba(139, 69, 19, 0.3);
+  border-bottom: 2px dashed rgba(139, 69, 19, 0.3);
+  border-radius: 0 0 72px 0;
+  opacity: 0.65;
+}
+
+.section-path-left::after {
+  left: 3px;
+  right: auto;
+  border-left: 2px dashed rgba(139, 69, 19, 0.3);
+  border-right: 0;
+  border-bottom: 2px dashed rgba(139, 69, 19, 0.3);
+  border-radius: 0 0 0 72px;
+}
+
+.artefact-chip {
+  @apply inline-flex items-center gap-1.5 rounded-xl border border-qbadoo-stone/20 bg-white/90 px-3 py-2 text-xs font-semibold text-qbadoo-stone shadow-card;
+}
+
+.speech-bubble {
+  @apply relative inline-flex max-w-md items-start gap-3 rounded-2xl border border-qbadoo-coral/45 bg-gradient-to-r from-[#fff4e7] to-[#ffe3d8] px-4 py-3 text-sm text-[#5b3a27] shadow-card;
+}
+
+.speech-bubble::after {
+  content: "";
+  @apply absolute -bottom-2 left-8 h-4 w-4 rotate-45 border-b border-r border-qbadoo-coral/45 bg-[#ffe8de];
+}
+
+@keyframes ringPulse {
+  0% {
+    opacity: 0.58;
+    transform: scale(0.92);
+  }
+  70% {
+    opacity: 0.16;
+    transform: scale(1.14);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ar-ring,
+  .ar-icon-wrap::before {
+    animation: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rounded-card:hover,
+  .parchment-panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 34px rgba(59, 31, 15, 0.14);
+  }
+}
